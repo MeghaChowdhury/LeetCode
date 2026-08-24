@@ -1,12 +1,12 @@
 class Solution(object):
     def plusOne(self, digits):
+
+        for i in range(len(digits) - 1, -1, -1):
+            if digits[i] != 9:
+                digits[i] += 1
+                return digits
+            else:
+                digits[i] = 0
                 
-        num = int("".join(map(str,digits))) + 1
 
-        digits = [int(x) for x in str(num)]
-
-        return digits
-        
-
-
-        
+        return [1] + digits
