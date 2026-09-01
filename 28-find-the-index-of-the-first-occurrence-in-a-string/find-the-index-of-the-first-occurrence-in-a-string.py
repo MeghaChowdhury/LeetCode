@@ -5,18 +5,9 @@ class Solution(object):
         :type needle: str
         :rtype: int
         """
-        total = len(needle)
-        t2 = len(haystack)
-        k = 0
-        if needle not in haystack:
-            return -1
+        for i in range(len(haystack)):
+            if haystack[i:i + len(needle)] == needle:
+                return i
 
-        while t2 >= total:
-            for i in range(len(haystack)):
-                if haystack[i : total] == needle[:]:
-                    return k
-                else:
-                    k += 1
-                    total += 1
-            return k
+        return -1
         
