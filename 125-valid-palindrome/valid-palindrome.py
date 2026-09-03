@@ -4,15 +4,18 @@ class Solution(object):
         :type s: str
         :rtype: bool
         """
-        k = 1
         store = ""
         
         for letter in s:
             if letter.isalnum():
                 store += letter.lower()
-        for i in range (len(store)-1):
-            if  store[i] == store[len(store)-k]:
-                k += 1
+        left = 0
+        right = len(store) - 1
+        while left < right:    
+            if  store[left] == store[right]:
+                left += 1
+                right -= 1
             else:
                 return False
+                
         return True
