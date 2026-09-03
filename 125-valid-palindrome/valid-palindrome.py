@@ -17,5 +17,4 @@ class Solution(object):
                 k += 1
             else:
                 return False
-                break
         return True
