@@ -6,7 +6,6 @@ class Solution(object):
         """
         k = 1
         store = ""
-        truth = True
         if s == " ":
             return True
         for letter in s:
@@ -18,4 +17,4 @@ class Solution(object):
             else:
                 return False
                 break
-        return truth
+        return True
