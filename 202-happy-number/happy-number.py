@@ -17,8 +17,7 @@ class Solution(object):
             if total == 1:
                 return True
                 
-            else:   
-                num = str(total)
+            num = str(total)
               
         return False
 
