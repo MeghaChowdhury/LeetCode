@@ -16,8 +16,8 @@ class Solution(object):
                 total += int(i)**2
             if total == 1:
                 return True
-            else:    
-                num = str(total)
+                
+            num = str(total)
               
         return False
 
