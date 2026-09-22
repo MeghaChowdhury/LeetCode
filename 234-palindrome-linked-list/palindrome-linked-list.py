@@ -9,16 +9,30 @@ class Solution(object):
         :type head: Optional[ListNode]
         :rtype: bool
         """
-        store = []
-        current = head
+        #find the middle value
+        slow = head
+        fast = head
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+
+        #reverse second half
+        prev = None
+        current = slow
         while current:
-            store.append(current.val)
-            current = current.next
-        left = 0
-        right = len(store) - 1
-        while left < right:
-            if store[left] != store[right]:
+            next_node = current.next
+            current.next = prev
+            prev = current
+            current = next_node
+        
+        # now comparing both sides
+        left = head
+        right = prev
+        while right:
+            if left.val != right.val:
                 return False
-            left += 1
-            right -= 1
+            left = left.next
+            right = right.next #updating the nodes
         return True
+
+
